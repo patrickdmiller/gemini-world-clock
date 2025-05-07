@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body {
+  @apply font-sans;
   overflow: hidden; /* Prevent scrollbars from transformed grid */
   background-color: #f0f0f0; /* Light gray background, similar to image */
 }
@@ -15,13 +16,23 @@ body {
   height: 100%;
   z-index: -1; /* Place it behind other content */
   --grid-color: rgba(0, 0, 0, 0.1); /* Light grid lines */
-  --grid-size: 50px; /* Adjust for desired grid density - this now directly controls line spacing */
+  --grid-size: 20px; /* Adjust for desired grid density - this now directly controls line spacing */
   background-image:
     linear-gradient(var(--grid-color) 1px, transparent 1px), /* Horizontal lines */
     linear-gradient(90deg, var(--grid-color) 1px, transparent 1px); /* Vertical lines */
   background-size: var(--grid-size) var(--grid-size); /* Grid lines every var(--grid-size) */
   transform-origin: center center;
-  transform: perspective(200px) rotateX(30deg) rotateZ(-45deg) scale(2);
+  transform: perspective(300px) rotateX(40deg) rotateZ(0deg) scale(2);
   /* Adjust perspective, rotateX, rotateZ, and scale to match the image more closely */
   /* You might need to play with these values */
+}
+
+#time-box {
+  @apply p-6 rounded-xl shadow-lg;
+  background-image: linear-gradient(135deg, #FF6B6B, #FFD166, #60A5FA); /* Red-Orange -> Yellow -> Blue */
+  /* Adjust gradient colors and angle as desired to match the reference image shapes */
+}
+
+#time-box #time {
+  @apply text-white text-center;
 }

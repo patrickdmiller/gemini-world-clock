@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="/css/output.css" rel="stylesheet">
 </head>
 <body class="bg-white text-black flex items-center justify-center min-h-screen">
     <div id="isometric-grid-bg"></div>
     <div id="clock-container" class="p-8">
         <h1 id="city-name" class="text-4xl font-light mb-4 tracking-wider transition-all duration-300 ease-in-out">Loading...</h1>
-        <p id="time" class="text-6xl font-medium transition-all duration-300 ease-in-out">--:--:--</p>
+        <div id="time-box">
+          <p id="time" class="text-6xl font-medium transition-all duration-300 ease-in-out">--:--:--</p>
+        </div>
     </div>
 
     <!-- Matter.js -->

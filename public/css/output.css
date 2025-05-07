@@ -154,7 +154,7 @@ html,
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Roboto, sans-serif;
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -625,6 +625,7 @@ video {
 }
 
 body {
+  font-family: Roboto, sans-serif;
   overflow: hidden;
   /* Prevent scrollbars from transformed grid */
   background-color: #f0f0f0;
@@ -641,7 +642,7 @@ body {
   /* Place it behind other content */
   --grid-color: rgba(0, 0, 0, 0.1);
   /* Light grid lines */
-  --grid-size: 50px;
+  --grid-size: 20px;
   /* Adjust for desired grid density - this now directly controls line spacing */
   background-image:
     linear-gradient(var(--grid-color) 1px, transparent 1px), /* Horizontal lines */
@@ -650,7 +651,24 @@ body {
   background-size: var(--grid-size) var(--grid-size);
   /* Grid lines every var(--grid-size) */
   transform-origin: center center;
-  transform: perspective(200px) rotateX(30deg) rotateZ(-45deg) scale(2);
+  transform: perspective(300px) rotateX(40deg) rotateZ(0deg) scale(2);
   /* Adjust perspective, rotateX, rotateZ, and scale to match the image more closely */
   /* You might need to play with these values */
+}
+
+#time-box {
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  background-image: linear-gradient(135deg, #FF6B6B, #FFD166, #60A5FA);
+  /* Red-Orange -> Yellow -> Blue */
+  /* Adjust gradient colors and angle as desired to match the reference image shapes */
+}
+
+#time-box #time {
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
