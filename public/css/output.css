@@ -554,6 +554,40 @@ video {
   display: none;
 }
 
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -630,6 +664,16 @@ body {
   /* Prevent scrollbars from transformed grid */
   background-color: #f0f0f0;
   /* Light gray background, similar to image */
+  perspective: 1000px;
+  /* Added for 3D animations */
+}
+
+#clock-container {
+  position: relative;
+  padding: 2rem;
+  /* Added relative for transform context if needed */
+  transform-style: preserve-3d;
+  /* Ensures children can be transformed in 3D */
 }
 
 #isometric-grid-bg {
@@ -671,4 +715,36 @@ body {
   text-align: center;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+@keyframes slideOut3D {
+  from {
+    opacity: 1;
+    transform: translateY(0) translateZ(0) rotateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-100%) translateZ(-200px) rotateX(70deg);
+  }
+}
+
+@keyframes slideIn3D {
+  from {
+    opacity: 0;
+    transform: translateY(100%) translateZ(-200px) rotateX(-70deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(0) rotateX(0);
+  }
+}
+
+.slide-out-3d {
+  animation: slideOut3D 0.5s forwards ease-in-out;
+}
+
+.slide-in-3d {
+  animation: slideIn3D 0.5s forwards ease-in-out;
 }

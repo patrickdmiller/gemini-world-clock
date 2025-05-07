@@ -6,6 +6,12 @@ body {
   @apply font-sans;
   overflow: hidden; /* Prevent scrollbars from transformed grid */
   background-color: #f0f0f0; /* Light gray background, similar to image */
+  perspective: 1000px; /* Added for 3D animations */
+}
+
+#clock-container {
+  @apply p-8 relative; /* Added relative for transform context if needed */
+  transform-style: preserve-3d; /* Ensures children can be transformed in 3D */
 }
 
 #isometric-grid-bg {
@@ -35,4 +41,34 @@ body {
 
 #time-box #time {
   @apply text-white text-center;
+}
+
+@keyframes slideOut3D {
+  from {
+    opacity: 1;
+    transform: translateY(0) translateZ(0) rotateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%) translateZ(-200px) rotateX(70deg);
+  }
+}
+
+@keyframes slideIn3D {
+  from {
+    opacity: 0;
+    transform: translateY(100%) translateZ(-200px) rotateX(-70deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(0) rotateX(0);
+  }
+}
+
+.slide-out-3d {
+  animation: slideOut3D 0.5s forwards ease-in-out;
+}
+
+.slide-in-3d {
+  animation: slideIn3D 0.5s forwards ease-in-out;
 }
