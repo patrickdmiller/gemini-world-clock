@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow: hidden; /* Prevent scrollbars from transformed grid */
+  background-color: #f0f0f0; /* Light gray background, similar to image */
+}
+
+#isometric-grid-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place it behind other content */
+  --grid-color: rgba(0, 0, 0, 0.1); /* Light grid lines */
+  --grid-size: 50px; /* Adjust for desired grid density - this now directly controls line spacing */
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px), /* Horizontal lines */
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px); /* Vertical lines */
+  background-size: var(--grid-size) var(--grid-size); /* Grid lines every var(--grid-size) */
+  transform-origin: center center;
+  transform: perspective(200px) rotateX(30deg) rotateZ(-45deg) scale(2);
+  /* Adjust perspective, rotateX, rotateZ, and scale to match the image more closely */
+  /* You might need to play with these values */
+}
